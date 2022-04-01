@@ -1,8 +1,77 @@
-.App {
-    margin: 2% 50%;
-}
 
+.flex {
+    display: flex;
+}
 
 .row {
     display: flex;
+    border-bottom: 1px solid hsla(0,0%,100%,0.05);
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-every {
+    justify-content: space-between;
+}
+
+.f-12 {
+    font-size: 12px;
+    color: hsla(0,0%,100%,0.5);
+}
+
+.pd-10 {
+    padding: 10px;
+}
+
+
+
+body {
+    background-color: #170F23;
+    color: #fff;
+}
+
+.App {
+    margin: 16px 32px;
+}
+
+.song {
+    flex: 2;
+}
+
+.album {
+    flex: 2.9;
+}
+
+.card-info {
+    flex: 2;
+}
+
+.album-info {
+    flex: 3;
+    line-height: 60px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.album-info {
+    p {
+        font-size: 12px;
+        color: hsla(0,0%,100%,0.5);
+    }
+}
+
+.img-artist {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.times {
+    line-height: 60px;
 }
