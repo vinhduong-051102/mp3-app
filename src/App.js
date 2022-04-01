@@ -1,35 +1,38 @@
-import {useState, useRef} from 'react'
-import './App.scss';
-import ReactTable from 'react-table';
 
+import './App.scss';
+import  ItemComponent  from '../src/components/ItemComponent'
 
 function App() {
-  const [job, setJob] = useState('')
-  const [jobs, setJobs] = useState([])
-  const inputRef = useRef()
-  const inputCurr = inputRef.current
-  const data = []
-  const handleAddJob = () => {
-    setJobs(prev => [...prev, job])
-    setJob('')
-    inputCurr.focus()
-  }
+  const listMusic = [
+    {
+      id: 1,
+      name: '1',
+      singer: 'a1',
+      description: 'd1' 
+    },
+    {
+      id: 2,
+      name: '2',
+      singer: 'a2',
+      description: 'd2' 
+
+    },
+    {
+      id: 3,
+      name: '3',
+      singer: 'a3',
+      description: 'd3' 
+    }
+  ]
   return (
     <div className="App">
-      <div className="header">
-        <input
-          placeholder="Enter job"
-          onChange={(e) => setJob(e.target.value)}
-          value = {job}
-          ref={inputRef}
-         />
-        <button
-          onClick={handleAddJob}
-        >
-          Add job
-        </button>
-      </div>
-      
+      <h1>Mới phát hành</h1>
+      {listMusic.map((sing, index) => 
+        <ItemComponent 
+          key = {index}
+          props = {sing}
+        />
+      )}
     </div>
   );
 }
