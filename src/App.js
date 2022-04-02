@@ -7,7 +7,7 @@ function App() {
   const datas = DB().data.items
   return (
     <div className="App">
-      <h1>Mới phát hành</h1>
+      <h1 className="f-54">Mới phát hành</h1>
       <Title />
       {datas.map((data, index) => 
         <div key = {index}>
