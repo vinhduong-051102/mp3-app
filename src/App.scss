@@ -5,7 +5,14 @@
 
 .row {
     display: flex;
+    border-left: 3px solid #170F23;
     border-bottom: 1px solid hsla(0,0%,100%,0.05);
+}
+
+.row:hover {
+    background-color: #393243;
+    opacity: 1;
+    border-left: 3px solid #71149F;;
 }
 
 .flex-col {
@@ -48,6 +55,10 @@ body {
     flex: 2.9;
 }
 
+.top {
+    flex: 0.5;
+}
+
 .card-info {
     flex: 2;
 }
@@ -74,6 +85,12 @@ body {
     height: 60px;
     border-radius: 4px;
     margin-right: 5px;
+}
+
+.row:hover {
+    .img-artist {
+        opacity: 1;
+    }
 }
 
 .times {

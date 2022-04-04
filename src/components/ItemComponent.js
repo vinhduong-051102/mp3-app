@@ -10,6 +10,7 @@ function ItemComponent({ props }) {
     
     return (
         <div className="row flex flex-every pd-10">
+            <h3 className="top">{duration}</h3>
             <div className="card-info flex">
                 <img className="img-artist" src={ props.album ? thumbnail : props.thumbnailM } />
                 <div className="artist-info flex flex-col">
