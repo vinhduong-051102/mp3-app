@@ -1,28 +1,23 @@
 import  secondToTime  from '../function/time.js'
-
-function ItemComponent({ props }) {
-    if(props.album) {
-        var { artistsNames ,title, thumbnail } = props.album
-    }
-    const nameMusic = props.title
-    const duration = props.duration
+function ItemComponent({ props, index }) {
+    const { duration, thumbnail, nameMusic, artistsNames, title } = props
     const timeRemain = secondToTime(duration)
-    
     return (
         <div className="row flex flex-every pd-10">
-            <h3 className="top">{duration}</h3>
+            <h3 className="top">{index + 1}</h3>
             <div className="card-info flex">
-                <img className="img-artist" src={ props.album ? thumbnail : props.thumbnailM } />
+                <img className="img-artist" src={ thumbnail } />
                 <div className="artist-info flex flex-col">
-                    <span className="title">{nameMusic}</span>
-                    <p className="f-12">{props.album ? artistsNames : props.artistsNames}</p>
+                    <span className="title">{ nameMusic }</span>
+                    <p className="f-12">{ artistsNames }</p>
                 </div>
             </div>
             <div className="album-info f-12">
-                {title}
+                { title }
             </div>
+            <p className="view f-12 middle">{duration}</p>
             <div className="times f-12">
-                {timeRemain}
+                { timeRemain }
             </div>
         </div>
     )

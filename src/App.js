@@ -2,30 +2,42 @@ import Title from './components/Title';
 import './App.scss';
 import  ItemComponent  from '../src/components/ItemComponent'
 import DB from './db'
-
+import Header from './components/Header'
+import { useState, useEffect } from 'react'
 
 function App() {
+  const [datas, setDatas] = useState(() => DB())
+  const [input, setInput] = useState('')
   const appCallBack = (data) => {
-    console.log(data);
+    const newArr = [...data]
+    setDatas(newArr)
   }
-  const datas = DB().data.items
+  const appInputCallBack = (data) => {
+    setInput(data)
+  }
+  useEffect(() => {
+    datas.sort((a, b) => b.duration - a.duration)
+    const newArr = [...datas]
+    setDatas(newArr)
+  }, [])
   return (
     <div className="App">
-      <div>
-        <h1 className="f-54">Mới phát hành</h1>
-      </div>
-
+      <Header 
+        appInputCallBack = {appInputCallBack}
+        appCallBack = {appCallBack}
+        input = {input}
+        datas = {datas}
+      />
       <Title 
         data={datas}
-        appCallBack = {appCallBack}
       />
       {datas.map((data, index) => 
         <div key = {index}>
           <ItemComponent 
             props = {data}
+            index = {index}
           />
         </div>
-
       )}
     </div>
   );

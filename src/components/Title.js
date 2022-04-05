@@ -1,19 +1,11 @@
 
-function Title(props) {
-    const arrView = []
-    const { data } = props
-    const handleClickView = () => {
-        data.forEach((item) => {
-            arrView.push(item.duration)
-        })
-        arrView.sort() 
-        props.appCallBack(arrView)
-    }
+function Title() {
     return (
-        <div className="row flex flex-every pd-10 f-12">
-            <p className="top" onClick = {handleClickView}>LƯỢI XEM</p>
+        <div className=" flex flex-every pd-10 f-12">
+            <p className="top" >XẾP HẠNG</p>
             <p className="song">BÀI HÁT</p>
             <p className="album">ALBUM</p>
+            <p className="view">LƯỢT XEM</p>
             <p className="time">THỜI GIAN</p>
         </div>
     )

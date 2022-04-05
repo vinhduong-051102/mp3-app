@@ -59,6 +59,39 @@ body {
     flex: 0.5;
 }
 
+.view {
+    flex: 1;
+}
+
+.middle {
+    align-self: center;
+}
+
+.input-style {
+    width: 320px;
+    height: 30px;
+    padding: 4px 16px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 999px;
+    background-color: #eee;
+    
+}
+
+.button-style {
+    padding: 8px 16px;
+    height: 38px;
+    border: 4px solid #7200a1;
+    background-color: #7200a1;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.button-style:hover {
+    opacity: 0.8;
+}
+
 .card-info {
     flex: 2;
 }
